@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
-	"jvmgo/ch02/classpath"
+	"jvmgo/ch03/classpath"
 	"strings"
 )
-import _ "strings"
 
 func main() {
 	cmd := parseCmd()
@@ -17,6 +16,10 @@ func main() {
 		startJvm(cmd)
 	}
 }
+
+/**
+启动虚拟机
+*/
 func startJvm(cmd *Cmd) {
 	//fmt.Printf("classpath:%s class:%s args:%v\n",cmd.cpOption,cmd.class,cmd.args)
 	cp := classpath.Parse(cmd.XjreOption, cmd.cpOption)
